@@ -6,6 +6,6 @@ module cadeado(
     input d
 );
 
-assign aberto = a & b & c & d;
+    assign aberto = a & b & c & d;
 
 endmodule

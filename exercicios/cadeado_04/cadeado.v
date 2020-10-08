@@ -14,10 +14,9 @@ module cadeado(
     end
 
     always @( negedge d) begin
-        conta_d <= conta_d + 1;
+        conta_d <= conta_d - 1;
     end
 
-    assign aberto = a & b & 
-           conta_c == 10 & conta_d == 5;
+    assign aberto = (a | b) & conta_c == 10 & conta_d == 5;
 
 endmodule
