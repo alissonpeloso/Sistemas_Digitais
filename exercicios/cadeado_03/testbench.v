@@ -4,10 +4,19 @@ module testbench;
 
     cadeado cad1(aberto, a, b, c, d);
 
+    always #1 begin
+        c <= ~c;
+    end
+
+    always #2 begin
+        d <= ~d;
+    end
+
 initial begin
    $dumpvars;
 
-    // Modifique aqui!
+    a <= 1;
+    b <= 1;
 
     #500;
 
