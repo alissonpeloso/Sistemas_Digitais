@@ -1,16 +1,24 @@
 module testbench;
 
 reg ck = 0, rst = 0, w = 0;
-wire done;
+wire done1, done2;
 
-wire [5:0] barramento;
+wire [5:0] barramento1;
+wire [5:0] barramento2;
 
 swap s1(
-    barramento,
+    barramento1,
     ck,
     rst,
     w,
-    done
+    done1
+);
+
+swap2 s2(
+    ck,
+    rst,
+    w,
+    done2
 );
 
 always #2 ck <= ~ck;
