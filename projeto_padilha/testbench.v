@@ -3,7 +3,10 @@ module testbench;
 reg ck = 0, rst = 0, w = 0;
 wire done;
 
+wire [5:0] barramento;
+
 swap s1(
+    barramento,
     ck,
     rst,
     w,

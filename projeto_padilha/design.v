@@ -1,20 +1,19 @@
 
 module swap (
+    inout [5:0] barramento,
     input ck,
     input rst,
     input w,
     output done
 );
 
-wire [5:0] barramento;
-
 wire [5:0] r1_out;
 wire [5:0] r2_out;
 wire [5:0] r3_out;
 
-registrador r1(ck, c1, barramento, r1_out);
-registrador r2(ck, c2, barramento, r2_out);
-registrador r3(ck, c3, barramento, r3_out);
+registrador1 r1(ck, c1, barramento, r1_out);
+registrador2 r2(ck, c2, barramento, r2_out);
+registrador3 r3(ck, c3, barramento, r3_out);
 
 tristate t1(h1, r1_out, barramento);
 tristate t2(h2, r2_out, barramento);
