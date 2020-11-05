@@ -21,15 +21,15 @@ always @(posedge ck or rst) begin
             0: state <= w ? 1 : 0;
             1: begin
                 state <= 2;
-                r3 <= r1;
+                r3 <= r2;
             end
             2: begin
                 state <= 3;
-                r1 <= r2;
+                r2 <= r1;
             end
             3: begin
                 state <= 0;
-                r2 <= r3;
+                r1 <= r3;
             end
         endcase
     end

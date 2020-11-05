@@ -4,7 +4,6 @@ reg ck = 0, rst = 0, w = 0;
 wire done1, done2;
 
 wire [5:0] barramento1;
-wire [5:0] barramento2;
 
 swap s1(
     barramento1,
