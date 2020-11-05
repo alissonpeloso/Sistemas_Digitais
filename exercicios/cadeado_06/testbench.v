@@ -8,8 +8,8 @@ module testbench;
 initial begin
     $dumpvars;
 
-    a <= 4'b1010;
-    b <= 4'b0000;
+    a <= 4'b0000;
+    b <= 4'b1100;
 
     #500
 
