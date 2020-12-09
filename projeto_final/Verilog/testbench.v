@@ -1,5 +1,4 @@
-
-
+`include "solve.v"
 
 module testbench;
 
@@ -9,6 +8,7 @@ reg signed [15:0] b;
 reg signed [15:0] c;
 wire signed [15:0] y;
 reg signed [15:0] expected;
+reg [31:0] counter = 0;
 
 reg clock = 0, enable = 0, reset = 0;
 
@@ -16,7 +16,7 @@ wire valid, ready;
 
 
 /* este modulo eh falso, precisa substituir pelo trabalho final */
-fake fake1(clock, x, a, b, c, enable, reset, y, ready, valid);
+solve solve1(clock, x, a, b, c, enable, reset, y, ready, valid);
 
 always #1 clock <= ~clock;
 
@@ -45,6 +45,10 @@ always @(posedge valid) begin
     if (expected !== y) begin
         $display("Erro: esperava %d, recebi %d.", expected, y);
         $finish;
+    end
+    else begin
+        counter = counter + 1;
+        $display("Verificacao no. %d correta.", counter);
     end
 end
 

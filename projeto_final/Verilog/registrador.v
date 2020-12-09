@@ -1,8 +1,8 @@
 module registrador(
     input clk,
     input l,
-    input [15:0] in,
-    output reg [15:0] out
+    input signed [15:0] in,
+    output reg signed [15:0] out
 );
 
     always @(posedge clk) begin
