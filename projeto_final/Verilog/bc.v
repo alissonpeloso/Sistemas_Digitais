@@ -23,7 +23,7 @@ module bc(
             if (state == 0 && ~enable)
                 state <= state;
             else begin
-                if(state > 7)
+                if(state == 8)
                     state <= 0;
                 else begin
                 state <= state + 1;
